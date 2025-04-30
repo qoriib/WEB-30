@@ -1,0 +1,405 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    color: #464255;
+    background-color: #fff;
+    font-family: "Barlow", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    display: block;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 0.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 0.25em;
+}
+
+.container {
+    padding: 1.25rem;
+    max-width: 70rem;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+  
+.col {
+    flex: 1;
+}
+
+.col-half { flex: 0 0 calc(50% - 0.75rem); max-width: calc(50% - 0.75rem); }
+
+.header {
+    margin-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0px 0.25rem 0.25rem 0px #00000040;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    height: 3.75rem;
+}
+
+.header-clock {
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.footer {
+    height: 4rem;
+    margin-top: 2rem;
+    background-color: #AEC7ED;
+}
+
+.subheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.subheader-content {
+    text-align: left;
+}
+
+.subheader-title {
+    color: #464255;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.subheader-subtitle {
+    color: #A3A3A3;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    gap: 1rem;
+    box-shadow: 0px 0.25rem 0.25rem 0px #00000040;
+    cursor: pointer;
+}
+  
+.filter-icon {
+    color: #2D9CDB;
+    background-color: #2D9CDB26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    font-size: 1.4rem;
+}
+  
+.filter-info {
+    display: flex;
+    flex-direction: column;
+}
+  
+.filter-title {
+    color: #3E4954;
+    font-size: 1rem;
+    font-weight: 500;
+}
+  
+.filter-date {
+    color: #3E4954;
+    font-size: 0.65rem;
+    font-weight: 400;
+}
+  
+.filter-arrow {
+    margin-left: 0.25rem;
+    font-size: 1rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+}
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+    margin-bottom: 1.875rem;
+}
+
+.card {
+    min-width: 10rem;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    text-align: left;
+    box-shadow: 0px 0.25rem 0.25rem 0px #00000040;
+    position: relative;
+}
+
+.card-lg {
+    padding: 1.25rem 1.5rem;
+}
+
+.card-bg {
+    background-color: #136EF038;
+}
+
+.display-title {
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.display-subtitle {
+    color: #3E4954;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.chart-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.chart-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.chart-label {
+    color: #464255;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+.chart-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart-hstack {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chart-hstack canvas {
+    max-width: 12rem;
+    max-height: 12rem;
+}
+
+.toggle {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.toggle-input {
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle-input input {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    appearance: none;
+}
+
+.toggle-input label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-wrap: nowrap;
+    position: relative;
+    color: #464255;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.toggle-input label::before {
+    content: "";
+    display: inline-block;
+    min-width: 0.65rem;
+    max-width: 0.65rem;
+    min-height: 0.65rem;
+    max-height: 0.65rem;
+    outline: 3px solid #FF5B5B;
+    outline-offset: 3px;
+    margin-right: 1rem;
+    border-radius: 0.125px;
+    background: transparent;
+}
+
+.toggle-input input:checked + label::before {
+    background: #FF5B5B;
+}
+
+.legend-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.legend-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.legend-color {
+    width: 0.95rem;
+    height: 0.95rem;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+.legend-label {
+    display: inline-block;
+    flex: 1;
+}
+
+.legend-value {
+    display: inline-block;
+    margin-left: 1.75rem;
+}
+
+.sdgs-title {
+    color: #001A72;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.sdgs-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.sdgs-card {
+    width: calc((100% / 4) - (1.125rem));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0px 0.25rem 0.25rem 0px #00000040;
+}
+
+.sdgs-img {
+    width: 7rem;
+}
+
+.sdgs-value {
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.sdg-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.sdg-img {
+    height: 8rem;
+}
+
+.sdg-title {
+    color: #001A72;
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead {
+    background-color: #f5f5f5;
+}
+
+.table th, .table td {
+    padding: 12px 16px;
+    border: 1px solid #D6D6D6;
+    text-align: left;
+}
+
+.table th {
+    text-align: center;
+    font-weight: 600;
+    color: #464255;
+}

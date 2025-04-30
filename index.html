@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDGs Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <img src="./images/logo.png" alt="SDGs Logo" class="header-logo">
+            <div class="header-clock"></div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="subheader">
+            <div class="subheader-content">
+                <h3 class="subheader-title">Dashboard</h3>
+                <p class="subheader-subtitle">Hi, Vivi. Welcome back!</p>
+            </div>
+            <div class="subheader-addon">
+                <div class="filter">
+                    <div class="filter-icon">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                    <div class="filter-info">
+                        <span class="filter-title">Filter Periode</span>
+                        <span class="filter-date">17 Feb 2020 - 21 May 2020</span>
+                    </div>
+                    <div class="filter-arrow">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-half">
+                <div class="card-row">
+                    <div class="card card-bg">
+                        <h5 class="display-subtitle">Total Acara</h5>
+                        <h2 class="display-title">1,765</h2>
+                    </div>
+                    <div class="card card-bg">
+                        <h5 class="display-subtitle">Total Pengunjung</h5>
+                        <h2 class="display-title">839</h2>
+                    </div>
+                </div>
+                <div class="card card-lg">
+                    <h3 class="chart-title">Top 3 SDGs</h3>
+                    <canvas id="top3Chart" height="200"></canvas>
+                </div>
+            </div>
+            <div class="col-half">
+                <div class="card card-lg">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Komersial</h3>
+                        <div class="toggle">
+                            <div class="toggle-input">
+                                <input type="radio" name="chartKomersialToggle" value="count" />
+                                <label>Jumlah</label>
+                            </div>
+                            <div class="toggle-input">
+                                <input type="radio" name="chartKomersialToggle" value="percent" checked />
+                                <label>Persen</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-half">
+                            <div class="chart-stack">
+                                <canvas id="chartKomersial" style="max-width: 12rem;"></canvas>
+                                <p class="chart-label">Komersial</p>
+                            </div>
+                        </div>
+                        <div class="col-half">
+                            <div class="chart-stack">
+                                <canvas id="chartNonKomersial" style="max-width: 12rem;"></canvas>
+                                <p class="chart-label">Non Komersial</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-lg">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Bidang</h3>
+                        <div class="toggle">
+                            <div class="toggle-input">
+                                <input type="radio" name="chartBidangToggle" value="count" />
+                                <label>Jumlah</label>
+                            </div>
+                            <div class="toggle-input">
+                                <input type="radio" name="chartBidangToggle" value="percent" checked />
+                                <label>Persen</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-hstack">
+                        <canvas id="chartBidang"></canvas>
+                        <div class="legend-container" id="legend-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-lg">
+            <h3 class="chart-title">Total Event & Pengunjung</h3>
+            <canvas id="chartTotal" height="100"></canvas>
+        </div>
+        <div class="card card-lg">
+            <h3 class="chart-title">Sub Sektor Ekonomi Kreatif</h3>
+            <canvas id="chartSektor" height="100"></canvas>
+        </div>
+        <h4 class="sdgs-title">SDGs Event</h4>
+        <div class="toggle">
+            <div class="toggle-input">
+                <input type="radio" name="sdgsToggle" value="count" checked />
+                <label>Jumlah</label>
+            </div>
+            <div class="toggle-input">
+                <input type="radio" name="sdgsToggle" value="percent" />
+                <label>Persen</label>
+            </div>
+        </div>
+        <div class="sdgs-grid">
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-1.png" alt="SDGS 1">
+                <span class="sdgs-value">1,765</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-2.png" alt="SDGS 2">
+                <span class="sdgs-value">365</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-3.png" alt="SDGS 3">
+                <span class="sdgs-value">2,305</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-4.png" alt="SDGS 4">
+                <span class="sdgs-value">3,315</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-5.png" alt="SDGS 5">
+                <span class="sdgs-value">124</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-7.png" alt="SDGS 7">
+                <span class="sdgs-value">15</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-8.png" alt="SDGS 8">
+                <span class="sdgs-value">2,987</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-9.png" alt="SDGS 9">
+                <span class="sdgs-value">3,001</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-10.png" alt="SDGS 10">
+                <span class="sdgs-value">908</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-12.png" alt="SDGS 12">
+                <span class="sdgs-value">1,004</span>
+            </div>
+            <div class="sdgs-card">
+                <img class="sdgs-img" src="./images/sdgs-17.png" alt="SDGS 17">
+                <span class="sdgs-value">582</span>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.1.0"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
